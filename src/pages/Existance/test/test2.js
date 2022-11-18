@@ -21,13 +21,14 @@ export default function Tree_Drag2() {
 
   return (
     <DndProvider backend={MultiBackend} options={getBackendOptions()}>
-      <Tree
+      <div >
+
+      <Tree      
         tree={treeData}
         rootId={0}
         onDrop={handleDrop}        
         render={(node, { depth, isOpen, onToggle, handleRef }) => (
-          <div  onClick={onToggle} className="py-2  pr-2 bg-white rounded-lg mt-4 w-96 h-14 flex items-center tree_icons_parents" style={{ marginRight: depth * 10 }}>
-            
+          <div  onClick={onToggle} className="py-2  pr-2 bg-white rounded-lg mt-4 w-52 hover:w-96 transition-all h-14 flex items-center tree_icons_parents" style={{ marginRight: depth * 10 }}>
             {node.droppable && (
               <span className="" onClick={onToggle}>{isOpen ? <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -59,19 +60,21 @@ export default function Tree_Drag2() {
             </svg>
             } </span>             
             )}
-            {node.droppable?'':<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-slate-600">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-</svg>
-}
+            {node.droppable?'':
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 min-w-fit text-slate-600 mx-[3px]">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            }
+            
              <span ref={handleRef} className="px-4 ">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6 cursor-pointer ">
                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
                 </svg>
               </span>
-              <div className="flex flex-col d-tree-head border border-white hover:border-indigo-400 rounded-lg">
+              <div className="flex flex-col d-tree-head border border-white   hover:border-indigo-400 rounded-lg">
             {/* <i className={`mr-1 ${node.icon}`}></i> */}
-            <div className="tree_icons_parents transition-all tree_textAndicon_parents hover:bg-slate-200 hover:shadow-lg w-72 rounded-lg p-2 flex items-center justify-between cursor-pointer">
-            <span className="px-8">
+            <div className="tree-inner transition-all tree_textAndicon_parents hover:bg-slate-200 hover:shadow-md  rounded-lg p-2 flex items-center justify-between cursor-pointer">
+            <span className="px-2">
             {node.text}              
               </span>        
                <div className="hidden tree_icons"
@@ -166,6 +169,7 @@ export default function Tree_Drag2() {
           </div>
         )}
       />
+      </div>
     </DndProvider>
   );
 }

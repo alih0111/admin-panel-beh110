@@ -70,7 +70,7 @@ export default function Existance_tree() {
 
       <div className="flex gap-2 justify-center mx-2">
         <button
-          className="AddNoP my-4 border hover:border-blue-400 hover:bg-slate-200 hover:shadow-lg transition-all bg-white px-4 py-2 rounded-lg"
+          className="AddNoP my-4 border hover:border-indigo-400 hover:bg-slate-200 hover:shadow-lg transition-all bg-white px-4 py-2 rounded-lg"
           onClick={AddNoPHandler}
         >
           <AddExistNoP addNoP={addNoP}/>
@@ -78,7 +78,7 @@ export default function Existance_tree() {
           افزودن موجودیت
         </button>
         <button
-          className="heoo my-4 bg-white px-4 py-2 rounded-lg border hover:border-blue-400 hover:bg-slate-200 hover:shadow-lg transition-all"
+          className="heoo my-4 bg-white px-4 py-2 rounded-lg border hover:border-indigo-400 hover:bg-slate-200 hover:shadow-lg transition-all"
           onClick={tree_AllShow}
         >
           {treeShow == 1 ? "بستن درخت" : "نمایش کامل درخت"}

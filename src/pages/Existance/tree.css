@@ -8,3 +8,6 @@
 .tree_icons_parents:hover .tree_textAndicon_parents{
     background-color: #e2e8f0;
 }
+.tree_icons_parents:hover .tree-inner{
+    width: 284px;
+}
