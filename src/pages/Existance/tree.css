@@ -1,0 +1,10 @@
+.activeParent .active svg{
+    rotate: -90deg;
+}
+.tree_icons_parents:hover .tree_icons{
+    display: flex;
+    transition: all;
+}
+.tree_icons_parents:hover .tree_textAndicon_parents{
+    background-color: #e2e8f0;
+}
